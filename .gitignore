@@ -1,0 +1,3 @@
+/certs/local.*
+/node_modules
+/dist
