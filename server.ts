@@ -63,7 +63,7 @@ async function main() {
   process.once("SIGINT", onSignal);
   process.once("SIGTERM", onSignal);
 
-  await server.listen({ host: "localhost", port: 8443 });
+  await server.listen({ host: "127.0.0.1", port: 8443 });
   server.log.info({ addresses: server.addresses() }, "server is listening");
 }
 
