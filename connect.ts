@@ -30,34 +30,16 @@ import { create } from "@bufbuild/protobuf";
 import { reply as talkReply } from "./utils/talk.js";
 import some from "./utils/some.js";
 import { setInterval as every } from "node:timers/promises";
+import { registerServerReflectionFromFile } from "@lambdalisue/connectrpc-grpcreflect";
+import { registerHealthService } from "./health.js";
 
-// type Settled<T> =
-//   | { i: number; ok: true; value: T }
-//   | { i: number; ok: false; error: unknown };
+export default (router: ConnectRouter) => {
+  // add reflection API to router
+  registerServerReflectionFromFile(router, "./sdk/descriptor.bin");
+  // add health service
+  registerHealthService(router);
 
-// function wrapWithIndex<T>(
-//   p: Promise<T>,
-//   i: number,
-// ): Promise<Settled<T> & { ref: Promise<any> }> {
-//   let ref!: Promise<any>;
-//   ref = p.then(
-//     (value) => ({ i, ok: true as const, value, ref }),
-//     (error) => ({ i, ok: false as const, error, ref }),
-//   );
-//   return ref;
-// }
-
-// async function* asCompletion<T>(promises: Promise<T>[]) {
-//   const pending = promises.map(wrapWithIndex);
-//   while (pending.length) {
-//     const res = await Promise.race(pending);
-//     const idx = pending.indexOf(res.ref);
-//     if (idx !== -1) pending.splice(idx, 1);
-//     yield res as Settled<T>;
-//   }
-// }
-
-export default (router: ConnectRouter) =>
+  // add basic service methods
   router.service(BasicService, {
     async hello(
       req: HelloRequest,
@@ -197,3 +179,4 @@ export default (router: ConnectRouter) =>
       }
     },
   });
+};

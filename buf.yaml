@@ -1,4 +1,6 @@
 version: v2
+deps:
+  - buf.build/grpc/grpc
 modules:
   - path: ./proto
     lint:
