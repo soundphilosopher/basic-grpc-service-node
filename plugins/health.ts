@@ -8,11 +8,11 @@ import {
   Health,
   HealthCheckResponse_ServingStatus,
   HealthCheckResponseSchema,
-} from "./sdk/grpc/health/v1/health_pb.js";
+} from "../sdk/grpc/health/v1/health_pb.js";
 import type {
   HealthCheckRequest,
   HealthCheckResponse,
-} from "./sdk/grpc/health/v1/health_pb.js";
+} from "../sdk/grpc/health/v1/health_pb.js";
 import { ServiceRegistry } from "./registry.js";
 
 class HealthService implements ServiceImpl<typeof Health> {

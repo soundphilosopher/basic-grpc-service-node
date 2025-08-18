@@ -30,12 +30,12 @@ import { create } from "@bufbuild/protobuf";
 import { reply as talkReply } from "./utils/talk.js";
 import some from "./utils/some.js";
 import { setInterval as every } from "node:timers/promises";
-import { registerServerReflectionFromFile } from "@lambdalisue/connectrpc-grpcreflect";
-import { registerHealthService } from "./health.js";
+import { registerHealthService } from "./plugins/health.js";
+import { registerReflectionService } from "./plugins/reflection.js";
 
 export default (router: ConnectRouter) => {
   // add reflection API to router
-  registerServerReflectionFromFile(router, "./sdk/descriptor.bin");
+  registerReflectionService(router);
   // add health service
   registerHealthService(router);
 
