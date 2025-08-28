@@ -1,15 +1,17 @@
 # 🚀 Basic gRPC Service: The TypeScript Edition
 
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?style=flat&logo=node.js)](https://nodejs.org/)
-[![TypeScript Version](https://img.shields.io/badge/typescript-%5E5.9.2-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Fastify Version](https://img.shields.io/badge/fastify-%5E5.4.0-black?style=flat&logo=fastify)](https://www.fastify.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![gRPC](https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white)](https://grpc.io/)
+[![Fastify](https://img.shields.io/badge/Fastify-000000?style=for-the-badge&logo=fastify&logoColor=white)](https://www.fastify.io/)
+
+[![License: UNLICENSED](https://img.shields.io/badge/License-UNLICENSED-red.svg)](https://opensource.org/licenses/)
 [![Buf](https://img.shields.io/badge/Buf-235BDB?style=flat&logo=buf&logoColor=white)](https://buf.build/)
 [![ConnectRPC](https://img.shields.io/badge/ConnectRPC-654FF0?style=flat&logo=connect&logoColor=white)](https://connectrpc.com/)
-[![CloudEvents](https://img.shields.io/badge/CloudEvents-Compliant-blue?style=flat&logo=cloudfoundry)](https://cloudevents.io/)
+[![HTTP/2](https://img.shields.io/badge/HTTP%2F2-Enabled-green?style=flat)](https://http2.github.io/)
+[![TLS](https://img.shields.io/badge/TLS-Secured-green?style=flat&logo=letsencrypt&logoColor=white)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 
 > *"Why write boring microservices when you can build something that actually talks back?"*
-
 
 Welcome to the most entertaining basic gRPC service you'll ever encounter! This isn't just another "Hello World" - it's a fully-featured gRPC service that includes an ELIZA-style therapist, background processing simulation, and all the modern TypeScript/Node.js goodness you crave.
 
