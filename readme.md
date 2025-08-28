@@ -5,7 +5,7 @@
 [![gRPC](https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white)](https://grpc.io/)
 [![Fastify](https://img.shields.io/badge/Fastify-000000?style=for-the-badge&logo=fastify&logoColor=white)](https://www.fastify.io/)
 
-[![License: UNLICENSED](https://img.shields.io/badge/License-UNLICENSED-red.svg)](https://opensource.org/licenses/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Buf](https://img.shields.io/badge/Buf-235BDB?style=flat&logo=buf&logoColor=white)](https://buf.build/)
 [![ConnectRPC](https://img.shields.io/badge/ConnectRPC-654FF0?style=flat&logo=connect&logoColor=white)](https://connectrpc.com/)
 [![HTTP/2](https://img.shields.io/badge/HTTP%2F2-Enabled-green?style=flat)](https://http2.github.io/)
