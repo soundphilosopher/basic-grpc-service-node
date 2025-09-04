@@ -7,15 +7,15 @@ import {
   FileDescriptorResponseSchema,
   ServerReflectionResponseSchema,
   ListServiceResponseSchema,
-} from "../sdk/grpc/refelction/v1alpha/reflection_pb";
+} from "../sdk/grpc/reflection/v1alpha/reflection_pb";
 import type {
   ServerReflectionRequest,
   ServerReflectionResponse,
   ServerReflection,
-} from "../sdk/grpc/refelction/v1alpha/reflection_pb";
+} from "../sdk/grpc/reflection/v1alpha/reflection_pb";
 import type { ServiceRegistry } from "./registry";
 
-export { ServerReflection } from "../sdk/grpc/refelction/v1alpha/reflection_pb";
+export { ServerReflection } from "../sdk/grpc/reflection/v1alpha/reflection_pb";
 
 export class ReflectionService implements ServiceImpl<typeof ServerReflection> {
   constructor(private registry: ServiceRegistry) {}
