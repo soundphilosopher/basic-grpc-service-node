@@ -59,24 +59,24 @@ sudo mv mkcert-v*-linux-amd64 /usr/local/bin/mkcert
 ```bash
 git clone <your-repo>
 cd basic-grpc-service-node
-npm install
+yarn install
 ```
 
 ### 2. Generate Your Certificates (Trust Issues Much?)
 ```bash
-npm run cert:generate
+yarn run cert:generate
 ```
 *This creates local certificates that your browser will actually trust. Magic!*
 
 ### 3. Generate Proto Code (Optional, but Fun)
 ```bash
-npm run buf:generate
+yarn run buf:generate
 ```
 *Watch as Buf transforms your `.proto` files into beautiful TypeScript. It's like a protobuf makeover show!*
 
 ### 4. Start the Show
 ```bash
-npm start
+yarn start
 ```
 
 🎉 **Boom!** Your gRPC service is now running on `https://127.0.0.1:8443` with all the bells, whistles, and TLS goodness.

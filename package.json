@@ -7,7 +7,10 @@
     "build": "tsc",
     "server": "tsc && node dist/server.js",
     "buf:generate": "buf generate --clean && buf build --as-file-descriptor-set -o sdk/descriptor.bin",
-    "cert:generate": "mkcert -install && mkcert -cert-file ./certs/local.crt -key-file ./certs/local.key localhost 127.0.0.1 0.0.0.0 ::1"
+    "cert:generate": "mkcert -install && mkcert -cert-file ./certs/local.crt -key-file ./certs/local.key localhost 127.0.0.1 0.0.0.0 ::1",
+    "pm2:start": "pm2 start server.ts --interpreter=\"node\" --node-args=\"--import tsx\" --name=\"basic-grpc-service\" --watch",
+    "pm2:stop": "pm2 delete basic-grpc-service",
+    "pm2:restart": "pm2 restart basic-grpc-service"
   },
   "keywords": [
     "fastify",
@@ -16,7 +19,7 @@
     "typescript"
   ],
   "author": "",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "@bufbuild/buf": "^1.59.0",

@@ -55,13 +55,26 @@ async function main() {
       (err) => {
         clearTimeout(t);
         server.log.error({ err }, "shutdown error");
-        process.exitCode = 1; // non-zero only on failure
+        process.exit(1); // non-zero only on failure
       },
     );
   };
 
-  process.once("SIGINT", onSignal);
-  process.once("SIGTERM", onSignal);
+  // Register for multiple signals
+  ["SIGINT", "SIGTERM", "SIGQUIT", "SIGHUP"].forEach((signal) => {
+    process.on(signal, () => onSignal(signal as NodeJS.Signals));
+  });
+
+  // Handle uncaught exceptions and unhandled rejections
+  process.on("uncaughtException", (err) => {
+    server.log.error({ err }, "Uncaught exception");
+    onSignal("SIGTERM" as NodeJS.Signals);
+  });
+
+  process.on("unhandledRejection", (reason, promise) => {
+    server.log.error({ reason, promise }, "Unhandled rejection");
+    onSignal("SIGTERM" as NodeJS.Signals);
+  });
 
   await server.listen({ host: "127.0.0.1", port: 8443 });
   server.log.info({ addresses: server.addresses() }, "server is listening");
